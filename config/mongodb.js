@@ -8,7 +8,7 @@ mongoose
     useFindAndModify: false,
   })
   .then((self) => {
-    console.log(`Connection to ${self.connection.name} established. on ${process.env.PORT} `);
+    console.log(`Connection to ${self.connection.name} established. on the port `);
   })
   .catch((error) => {
     console.log(`An error occured try to connect to the DB ${error}`);
