@@ -6,6 +6,7 @@ const User = require("../models/User.model")
 /* GET main functions. */
 
 router.get('/', (req, res, next) => {
+    console.log("this is working");
   User.find()
     .then(user => res.status(200).json(user[0]))
     .catch((err) => res.status(500).json(err));
