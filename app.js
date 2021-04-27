@@ -36,7 +36,10 @@ let settingsRouter = require('./routes/settings');
 app.use('/api/users', usersRouter);
 // app.use('/api/settings', settingsRouter)
 
-
+app.use("/*", (req, res, next) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,9 +57,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.use("/*", (req, res, next) => {
-    // If no routes match, send them the React HTML.
-    res.sendFile(__dirname + "/public/index.html");
-  });
 
 module.exports = app;
