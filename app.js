@@ -31,8 +31,10 @@ app.use(
 // Routers
 
 var usersRouter = require('./routes/users');
+let settingsRouter = require('./routes/settings');
 
 app.use('/api/users', usersRouter);
+app.use('/api/settings', settingsRouter)
 
 
 
